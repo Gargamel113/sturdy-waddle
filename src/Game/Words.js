@@ -3,37 +3,36 @@ import Word from './Word';
 import WordList from './WordList';
 
 const Words = () => {
-  const animals = WordList();
-  const [currentWord, setWord] = useState(animals[randomWord()]);
-  const [passedWord, setPassedWord] = useState("");
-  const [passed, pass] = useState(false);
 
-  function randomWord() {
+  const randomWord = () => {
     return Math.floor(Math.random() * animals.length);
   }
 
-  function wordDone() {
+  const wordDone = () => {
     setWord(animals[randomWord()]);
   }
 
-  function wordPassed() {
+  const wordPassed = () => {
     setPassedWord(currentWord);
     wordDone();
-    pass(true);
   }
 
-  function wordGoback() {
+  const wordGoback = () => {
     setPassedWord(currentWord);
     setWord(passedWord);
   }
+  
+  const animals = WordList();
+  const [currentWord, setWord] = useState(animals[randomWord()]);
+  const [passedWord, setPassedWord] = useState("");
 
   return (
     <>
       <Word word={currentWord} />
       <div>
-        <button onClick={ wordGoback }>go back</button>
-        <button onClick={ wordPassed }>pass word</button>
-        <button onClick={ wordDone }>cleared</button>
+        <button onClick={wordGoback}>go back</button>
+        <button onClick={wordPassed}>pass word</button>
+        <button onClick={wordDone}>cleared</button>
       </div>
     </>
   )

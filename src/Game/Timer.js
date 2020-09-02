@@ -1,8 +1,7 @@
 import React from 'react';
 
-const Timer = () => {
-  let time = 50;
-  return <h4>Timer: {time}s</h4>
+const Timer = (props) => {
+  return <h4>Timer: {props.time}s</h4>
 }
 
 export default Timer;
