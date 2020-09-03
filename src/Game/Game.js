@@ -1,12 +1,12 @@
 // import React, { Component } from 'react';
 import React, {useEffect, useState } from 'react';
-import Timer from './Timer';
-import Player from '../Player';
-import Words from './Words';
+import Timer from './Timer/Timer';
+import PlayerList from '../Menu/Player/PlayerDisplay';
+import Words from './Word/Words';
 import './Game.css';
 
-const Game = () => {
-  const [time, setTime] = useState(5);
+const Game = (props) => {
+  const [time, setTime] = useState(props.timer);
   const [isActive, setIsActive] = useState(true);
 
   useEffect(() => {
@@ -15,16 +15,15 @@ const Game = () => {
       interval = setInterval(() => {
         setTime(time => time - 1);
       }, 1000);
-    } else if (!isActive && time !== 0) {
-      clearInterval(interval);
+    } else {
+      props.change();
     }
-    
     return () => clearInterval(interval);
   }, [isActive, time]);
-
+  
   return (
     <div className="Game">
-      <Player newTurn={time}/>
+      <PlayerList newTurn={time}/>
       <Timer time={time} />
       <Words />
     </div>
