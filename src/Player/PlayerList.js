@@ -1,4 +1,4 @@
-const list = ["Robbin", "Sofie", "Tobbe", "Fia", "Viktor"];
+const list = [];
 
 export function add(e) {
   list.push(e);

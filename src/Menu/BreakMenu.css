@@ -1,0 +1,28 @@
+.BreakMenu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(46, 51, 104);
+  height: 100%;
+}
+
+.BreakMenu-container h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3em;
+  border: 2px solid black;
+  font-size: 3.5em;
+  margin: 150px 0;
+  background-color: rgb(29, 32, 66);
+  color:white;
+}
+
+.BreakMenu-container button {
+  width: 150px;
+  height: 100px;
+  background-color: rgb(106, 111, 175);
+  margin-bottom: 50px;
+}
