@@ -7,11 +7,10 @@ import './Game.css';
 
 const Game = (props) => {
   const [time, setTime] = useState(props.timer);
-  const [isActive, setIsActive] = useState(true);
 
   useEffect(() => {
     let interval = null;
-    if (isActive && time > 0) {
+    if (time > 0) {
       interval = setInterval(() => {
         setTime(time => time - 1);
       }, 1000);
@@ -19,7 +18,7 @@ const Game = (props) => {
       props.change();
     }
     return () => clearInterval(interval);
-  }, [isActive, time]);
+  }, [time]);
   
   return (
     <div className="Game">
