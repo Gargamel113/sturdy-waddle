@@ -6,6 +6,7 @@ import '../Menu/Menu.css';
 export const PlayerAdd = () => {
   const [player, setPlayer] = useState("");
   const [players, setPlayers] = useState([]);
+  const [inputField, setInputField] = useState("");
 
   const addNewPlayer = (event) => {
     event.preventDefault();
@@ -14,11 +15,13 @@ export const PlayerAdd = () => {
     } else {
       add(player);
       setPlayer("");
+      inputField.value = "";
     }
     setPlayers(getList());
   }
 
   const changeHandler = (event) => {
+    setInputField(event.target);
     setPlayer(event.target.value);
   }
 

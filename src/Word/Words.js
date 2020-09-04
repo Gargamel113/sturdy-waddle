@@ -56,7 +56,7 @@ class Words extends Component {
     fetch("http://localhost:8080/words/")
     .then((res) => res.json())
     .then(data => {
-      this.setState({words: data[0].Animals})
+      this.setState({words: data[0].randomWords})
     });
   }
 }

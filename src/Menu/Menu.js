@@ -7,10 +7,10 @@ import './Menu.css';
 export const Menu = (props) => {
   const [timer, setTimer] = useState(0);
   const [timerWarning, setTimerWarning] = useState("none");
-  
+
   function onChangeUpdate(e) {
     props.time(e.target.value);
-
+    
     if (e.target.value > 0) {
       setTimer(e.target.value);
       setTimerWarning("none"); 
